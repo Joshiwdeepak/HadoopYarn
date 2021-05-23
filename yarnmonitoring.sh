@@ -30,7 +30,7 @@ echo "App $jobId is running for $time_diff_in_mins min(s)"
 if [ $time_diff_in_mins -gt $1 ]; then
   echo "Moving app $jobId to strategic queue"
 yarn application -movetoqueue $jobId -queue strategic
-echo "Yarn job $jobId is moved to strategic queue as it is taking more than 60 mins to complete in default queue" | mail -s "Alert : Yarn Queue Management" NSC-BIGINSIGHTS-INFRASTRUCTURE@nationwide.com
+echo "Yarn job $jobId is moved to strategic queue as it is taking more than 60 mins to complete in default queue" | mail -s "Alert : Yarn Queue Management" emailaddress@somewhere.com
 else
   echo "App $jobId should continue to run"
 fi
